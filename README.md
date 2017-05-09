@@ -1,2 +1,0 @@
-# SuperBrain-
-Personal projects share!!!
