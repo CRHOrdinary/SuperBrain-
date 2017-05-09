@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		
+		<!-- 配置连接MySql数据库的基本信息 -->
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql:///hibernate1</property>
+		
+		<!-- 
+			以下配置Hibernate的基本信息 
+		-->
+		
+		<!-- 配置Hibernate的所使用的数据库方言,5.0之后使用这个:MySQL5InnoDBDialect-->
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+		
+		<!-- 执行操作时是否在控制台打印SQL -->
+		<property name="show_sql">true</property>
+		
+		<!-- 是否对SQL进行格式化输出 -->
+		<property name="format_sql">true</property>
+		
+		<!-- 指定自动生成数据表的策略，四个值 create,create-drop,update,validate-->
+		<property name="hbm2ddl.auto">update</property>
+		
+		<!-- 设置Hibernate的事务隔离级别 -->
+		<property name="connection.isolation">2</property>
+		
+		<!-- 设置删除对象后，使其 OID置为 NULL -->
+		<property name="use_identifier_rollback">true</property>
+		
+		<!-- 指定对象-关系映射文件 *.hbm.xml -->
+		<mapping resource="com/hrc/entity/News.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>
